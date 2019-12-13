@@ -53,7 +53,7 @@ class CsvConvertToDB: #TODO think of a better name
 
     #Run the class
     def RunConvertor(fileName,splitCharacter,dbName,tableName):
-        print("Start converting... file must have a header and be in the right format (one table)!\n\n")
+        print("Start converting... dbName=" +dbName + " table=" + tableName + " file must have a header and be in the right format (one table)!\n\n")
         
         #convert CSV to data that can be used 
         rawDataFile = CsvConvertToDB.ImportFile(fileName) #import

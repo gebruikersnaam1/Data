@@ -4,15 +4,24 @@
 ##################################################
 
 #import files
-
 import sqlite3 #to work with SQLlite
 
 class Database:
     conn = None
 
     def __init__(self, fileName):
-        self.conn = sqlite3.connect(fileName)  # loading the database (creating if name isn't found)
-        
+        self.conn = sqlite3.connect(fileName+".sql")  # loading the database (creating if name isn't found)
+    
+    def GetQuery(self,query):
+        c = self.conn.cursor()
+        c.execute(query)
+        return c.fetchall()
+        try:
+            c = self.conn.cursor()
+            c.execute(query)
+            return c.fetchall()
+        except:
+            print("Couldn't get the data")
 
     def RunCreateQuery(self,query):
         try:
