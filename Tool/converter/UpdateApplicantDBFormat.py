@@ -1,7 +1,7 @@
 ####################
 #   @content this class is to create the model
 ####################
-from Database import Database
+from converter.Database import Database
 import datetime
 from random import randint
 

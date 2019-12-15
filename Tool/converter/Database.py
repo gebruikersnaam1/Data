@@ -10,7 +10,7 @@ class Database:
     conn = None
 
     def __init__(self, fileName):
-        self.conn = sqlite3.connect(fileName+".sql")  # loading the database (creating if name isn't found)
+        self.conn = sqlite3.connect("./output/" + fileName + ".sql")  # loading the database (creating if name isn't found)
     
     def GetQuery(self,query):
         c = self.conn.cursor()
@@ -21,7 +21,7 @@ class Database:
             c.execute(query)
             return c.fetchall()
         except:
-            print("Couldn't get the data")
+            print("Row insert rejected")
 
     def RunCreateQuery(self,query):
         try:
@@ -29,4 +29,4 @@ class Database:
             c.execute(query) #execute query
             self.conn.commit() #commit
         except:
-            print("query couldn't be inserted")
+            print("Row rejected")

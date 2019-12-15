@@ -1,4 +1,5 @@
 #quick code
+from converter.Database import Database
 
 class CreateZipcodes:
     ZipCodes = [
@@ -37,10 +38,20 @@ class CreateZipcodes:
                 return False
         return True
 
+    def CreateZipCodeTable(dbName, tableName):
+        query = "CREATE TABLE " + tableName +  "(area STRING, minValue INT, maxValue INT)"
+        db = Database(dbName)
+        db.RunCreateQuery(query)
+
+    def InsertAreas(dbName,tableName):
+        db = Database(dbName)
+        for i in CreateZipcodes.ZipCodes:
+            query = "insert into " + tableName + " values ("
+            query += "'" + i['area'] + "'" + "," + str(i['min']) + "," + str(i['max']) + ")"
+            db.RunCreateQuery(query)
+
     def InitZipcodes(dbName, tableName):
-        if CreateZipcodes.CheckIfZipCodesOverlap == False:
+        if CreateZipcodes.CheckIfZipCodesOverlap() == False:
             return False
-        
-
-
-CreateZipcodes.CheckIfZipCodesOverlap()
+        CreateZipcodes.CreateZipCodeTable(dbName,tableName)
+        CreateZipcodes.InsertAreas(dbName,tableName)

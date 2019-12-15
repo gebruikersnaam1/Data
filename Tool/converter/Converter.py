@@ -1,12 +1,12 @@
 import csv #to get code that allows CSV file import
-from Database import Database
+from converter.Database import Database
 
 class CsvConvertToDB: #TODO think of a better name
 
     #import the CSV file
     def ImportFile(fileName): 
         try:
-           return open(fileName, mode='r')
+           return open('./sourceFile/'+fileName, mode='r')
         except:
             print ("File couldn't be found! Did you include an extension (e.g. .CSV) to the file? ")
             exit()
