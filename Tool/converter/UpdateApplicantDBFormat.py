@@ -71,7 +71,7 @@ class UpdateApplicantDBFormat: #TODO shorter name
 
     def CreateApplicantsTable(dbName,tableName):
         #headers 
-        query = "CREATE TABLE " + tableName + "(ID int, FirstName VARCHAR(100), Affix VARCHAR (100), Lastname VARCHAR (100), DateOfBirth DATE, ZipCode int(4), Gender VARCHAR(6) )"
+        query = "CREATE TABLE " + tableName + "(ID int PRIMARY KEY, FirstName VARCHAR(100), Affix VARCHAR (100), Lastname VARCHAR (100), DateOfBirth DATE, ZipCode int(4), Gender VARCHAR(6) )"
         db = Database(dbName)
         db.RunCreateQuery(query)
 
@@ -83,7 +83,7 @@ class UpdateApplicantDBFormat: #TODO shorter name
     
     def CreateIntermediairTable(dbName,tableName):
         #headers 
-        query = "CREATE TABLE  " + tableName + "(Intermediair int, Zipcode int(4))"
+        query = "CREATE TABLE  " + tableName + "(Intermediair int PRIMARY KEY, Zipcode int(4))"
         db = Database(dbName)
         db.RunCreateQuery(query)
     
@@ -92,7 +92,7 @@ class UpdateApplicantDBFormat: #TODO shorter name
         for i in range(UpdateApplicantDBFormat.amountIntermediaries):
             value = int(randint(0, (len(UpdateApplicantDBFormat.IntermediariesZipCodes)-1)))
             zipCode = str(UpdateApplicantDBFormat.IntermediariesZipCodes[value])
-            id = str(i)
+            id = str((i + 1))
             query = "insert into " + tableName + " values(" + id + ", " + zipCode + ");"
             db.RunCreateQuery(query)
 

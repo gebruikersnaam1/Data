@@ -39,7 +39,7 @@ class CreateZipcodes:
         return True
 
     def CreateZipCodeTable(dbName, tableName):
-        query = "CREATE TABLE " + tableName +  "(area STRING, minValue INT, maxValue INT)"
+        query = "CREATE TABLE " + tableName +  "(Area STRING PRIMARY KEY, MinValue INT(4), MaxValue INT (4))"
         db = Database(dbName)
         db.RunCreateQuery(query)
 

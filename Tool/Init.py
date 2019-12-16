@@ -7,7 +7,7 @@ from converter.Zipcodes import CreateZipcodes
 import os
 
 def init():
-    tableName = 'applicant'
+    tableName = 'Applicant'
     databaseName = 'Jeugdfonds.sql'
 
     #explaining whats happening
@@ -19,11 +19,11 @@ def init():
     print("\n =======================================================================================================\n")
     print("step 2: transforming the SQL-data to the new format")
     print("NOTE: because of the data format, some rows may be rejected")
-    UpdateApplicantDBFormat.RunCreator(databaseName,tableName,"Project","Intermediairs")
+    UpdateApplicantDBFormat.RunCreator(databaseName,tableName,"Project","Intermediair")
 
     print("\n =======================================================================================================\n")
     print("step 3: create the Zip code table")
-    CreateZipcodes.InitZipcodes(databaseName,'ZipCodes')
+    CreateZipcodes.InitZipcodes(databaseName,'ZipCode')
 
 #intro text, just because...
 print("This application is made to convert de CSV of Jeugdfonds to a data format that is usable for Jeugdfonds project of InCubeData \n")
