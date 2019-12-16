@@ -34,14 +34,19 @@ class UpdateApplicantDBFormat: #TODO shorter name
                 #name
                 name = r[1].split(" ")
                 del name[-1] #remove the date behind a name
-                rowsAp.append(name[0]) #firstname
+                rowsAp.append(name[0].title()) #firstname
                 #affix
                 affix = " ".join(name[1:-1])
-                rowsAp.append(affix) 
-                rowsAp.append(name[-1])
+                rowsAp.append(affix.lower()) 
+                rowsAp.append(name[-1].title())
                 rowsAp.append(r[2]) #date of birth
                 rowsAp.append(r[3]) #zip code
-                rowsAp.append(r[4]) #gender
+                
+                #lower
+                if r[4].title() == "Vrouw" or r[4].title() == "Man":
+                    rowsAp.append(r[4].title())
+                else:
+                    rowsAp.append("Overig")
 
                 rowsPro.append(r[0]) #userID
                 if r[5].strip() == "":
@@ -50,7 +55,7 @@ class UpdateApplicantDBFormat: #TODO shorter name
                     rowsPro.append(True)
                 rowsPro.append(randint(1, UpdateApplicantDBFormat.amountIntermediaries)) #there are 14 'deelgemeentes' so lets create 20 intermediairs (so all areas have one and some have more)
                 if len(rowsApplicants) > 0: #remove the dupples
-                    if rowsAp[1:] == rowsApplicants[-1][1:]:
+                    if rowsAp[1:5] == rowsApplicants[-1][1:5]:
                         continue
                 rowsApplicants.append(rowsAp)
                 rowsProjects.append(rowsPro)
