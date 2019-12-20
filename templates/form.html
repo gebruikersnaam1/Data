@@ -3,30 +3,6 @@
   {% include '_header.html' %}
   <body>
     {% include '_menu.html' %}
-      <div class="container">
-        <div class="HomeInnerTwo" style="margin-top:100px;">
-          <form action="">
-            First name:<br />
-            <input type="text" name="firstname" value="" />
-            <br /><br />
-            Family Name Affix:<br />
-            <input type="text" name="familynameaffix" value="" />
-            <br /><br />
-            Last name:<br />
-            <input type="text" name="lastname" value="" />
-            <br /><br />
-            Date of Birth:<br />
-            <input type="text" name="dateofbirth" value="" />
-            <br /><br />
-            <input
-              type="submit"
-              value="Submit"
-              style="background-color: #a6acbc; border: none; color: white; padding: 15px 30px;"
-              class="btn btn-info"
-            />
-          </form>
-        </div>
-      </div>
-
+    {% include '_form.html' %}
   </body>
 </html>
