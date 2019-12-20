@@ -1,61 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link
-      rel="stylesheet"
-      href="{{ url_for('static', filename='css/main.css') }}"
-    />
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-      crossorigin="anonymous"
-    />
-  </head>
-  <style>
-    .HomeInner {
-      margin-top: 100px;
-      display: flex;
-      justify-content: flex-start;
-      align-items: baseline;
-    }
-
-    input,
-    p {
-      padding: 15px 10px;
-    }
-
-    .InputWrapper {
-      display: flex;
-      align-items: baseline;
-      padding: 0 30px;
-    }
-    .Formulier {
-      margin-left: auto;
-    }
-  </style>
-
-  <body>
-    <div class="Home">
-      <div class="container">
-        <div class="HomeInner">
-          <div class="InputWrapper">
-            <input type="checkbox" name="age" value="Age" />
-            <p>Age</p>
-          </div>
-          <div class="InputWrapper">
-            <input type="checkbox" name="gender" value="Gender" />
-            <p>Gender</p>
-          </div>
-          <div class="Formulier">
-              <a href="/form" style="padding: 15px" >Form</a>
-              <a href="/" style="padding: 15px" >Map</a>
-          </div>
-        </div>
-      </div>
-    </div>
+   {% include '_header.html' %}
+   <body>
+    {% include '_menu.html' %}
   </body>
 </html>
