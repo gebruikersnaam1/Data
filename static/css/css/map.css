@@ -1,0 +1,4 @@
+.Map .MapInner .ImagesFirstRow {
+  display: flex;
+  justify-content: center;
+}
