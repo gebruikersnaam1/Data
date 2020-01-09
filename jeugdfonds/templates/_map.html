@@ -5,7 +5,7 @@
         {% for d in controller.GetMapItems() %}
           <div class="">
               <img
-                src="{{url_for('static', filename='img/map/Overschie - GREEN.png')}}"
+                src="{{ d.GetImage()}}"
                 alt="{{ d.deelgemeente.areaName}}"
                 title="{{ d.deelgemeente.areaName}} - {{d.deelgemeente.applicants}}"
               />
