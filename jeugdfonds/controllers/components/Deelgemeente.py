@@ -8,4 +8,4 @@ class Deelgemeente:
         self.areaName = areaName
         self.zipCodeRange = zipCodeRange
         self.applicants = applicants
-        self.intermediair : intermediair
+        self.intermediair = intermediair
