@@ -3,7 +3,7 @@
     <div class="MapInner">
         <h1>Map of Rotterdam</h1>
 
-        <form>
+        <form method="POST" action="/">
           <lable>Min Age</lable>
           <select name="minAge">
             {% for x in range(4,19) %}
@@ -19,7 +19,7 @@
           </select>
 
           <lable>Gender</lable>
-          <select value="gender">
+          <select name="gender">
             <option value="both" selected>Both</option>
             <option value="Man">Male</option>
             <option value="Female">Female</option>

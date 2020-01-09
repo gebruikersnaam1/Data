@@ -1,5 +1,6 @@
 from jeugdfonds.controllers.components.Deelgemeente import Deelgemeente
 from jeugdfonds.models.ApplicantsModel import ApplicantsModel
+from flask import request
 
 class ApplicantsController:
 
@@ -13,3 +14,9 @@ class ApplicantsController:
         for a in applicants:
             Deelgemeentes.append(Deelgemeente(a[0],(a[3],a[4]),a[1],a[2]))
         return Deelgemeentes
+
+    def GetRequestedApplicants(self):
+        if request.method == "POST":
+            return self.GetAllApplicants() 
+        else:
+            return self.GetAllApplicants()

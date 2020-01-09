@@ -5,12 +5,13 @@ from jeugdfonds.controllers.Router import Router
 app = Flask(__name__,root_path=os.path.join(os.getcwd(), 'jeugdfonds'))
 
 
-@app.route('/')
+@app.route('/',methods=['POST','GET'])
 def index():
     c = Router.GetController("map")
+
     return render_template('index.html', controller = c)
 
-@app.route('/form')
+@app.route('/form',methods=['POST','GET'])
 def form():
     return render_template('form.html')
 
