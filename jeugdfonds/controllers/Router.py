@@ -7,7 +7,7 @@ class Router:
     def GetController(name):
         if name == "map":
             c = ApplicantsController()
-            return MapController(c.GetDeelgemeentesArray())
+            return MapController(c.GetAllApplicants())
         else:
             return None
             

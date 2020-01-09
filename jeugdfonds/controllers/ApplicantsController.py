@@ -3,12 +3,12 @@ from jeugdfonds.models.ApplicantsModel import ApplicantsModel
 
 class ApplicantsController:
 
-    def GetApplicants(self):
+    def GetAllApplicants(self):
         a = ApplicantsModel()
-        return a.GetApplicantsAreaInfo()
+        applicants = a.GetApplicantsInfo()
+        return self.GetDeelgemeentesArray(applicants)
 
-    def GetDeelgemeentesArray(self):
-        applicants = self.GetApplicants()
+    def GetDeelgemeentesArray(self,applicants):
         Deelgemeentes = []
         for a in applicants:
             Deelgemeentes.append(Deelgemeente(a[0],(a[3],a[4]),a[1],a[2]))
