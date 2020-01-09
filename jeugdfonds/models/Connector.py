@@ -10,7 +10,7 @@ class Connector:
     conn = None
 
     def __init__(self):
-        self.conn = sqlite3.connect("Jeugdfonds.sql")  # loading the database (creating if name isn't found)
+        self.conn = sqlite3.connect("jeugdfonds/models/Jeugdfonds.sql")  # loading the database (creating if name isn't found)
     
     def GetQuery(self,query):
         c = self.conn.cursor()

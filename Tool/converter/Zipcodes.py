@@ -6,7 +6,7 @@ class CreateZipcodes:
         {'area' : "Centrum", "min" : 3011, "max":3016},
         {'area' : "Charlois", "min" : 3081, "max":3089},
         {'area' : "Delfshaven", "min" : 3021, "max":3029},
-        {'area' : "Feijnoord", "min" : 3071, "max":3075},
+        {'area' : "Feijenoord", "min" : 3071, "max":3075},
         {'area' : "Hillegersberg-Schiebroek", "min" : 3051, "max":3056},
         {'area' : "Hoek van Holland", "min" : 3151, "max":3151},
         {'area' : "Hoogvliet", "min" : 3191, "max":3194},

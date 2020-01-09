@@ -1,11 +1,14 @@
 import os
 from flask import Flask, render_template, url_for, request, redirect
+from jeugdfonds.controllers.Router import Router
 
 app = Flask(__name__,root_path=os.path.join(os.getcwd(), 'jeugdfonds'))
 
+
 @app.route('/')
 def index():
-    return render_template('index.html')
+    c = Router.GetController("map")
+    return render_template('index.html', controller = c)
 
 @app.route('/form')
 def form():
