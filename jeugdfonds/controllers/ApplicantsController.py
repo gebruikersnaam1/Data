@@ -3,12 +3,21 @@ from jeugdfonds.models.ApplicantsModel import ApplicantsModel
 from flask import request
 
 class ApplicantsController:
+    minAge = 4
+    maxAge = 18
+    gender = "%%" #gender 
 
     def GetAllApplicants(self):
         a = ApplicantsModel()
         applicants = a.GetApplicantsInfo()
         return self.GetDeelgemeentesArray(applicants)
 
+    def GetPostValues(self):
+        return self.GetAllApplicants()
+
+    def GetFilterdApplicants(self):
+        return self.GetAllApplicants()
+    
     def GetDeelgemeentesArray(self,applicants):
         Deelgemeentes = []
         for a in applicants:
@@ -17,6 +26,6 @@ class ApplicantsController:
 
     def GetRequestedApplicants(self):
         if request.method == "POST":
-            return self.GetAllApplicants() 
+            return self.GetFilterdApplicants() 
         else:
             return self.GetAllApplicants()

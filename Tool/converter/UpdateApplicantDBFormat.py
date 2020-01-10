@@ -7,8 +7,8 @@ from random import randint
 
 class UpdateApplicantDBFormat: #TODO shorter name
     oldColumnsName = ['rowid','Applicant','DateOfBirth','Zipcode','Gender','DateOfApproval']
-    amountIntermediaries = 20 #there are 14 areas ('deelgemeentes'), so this ensures that all get one and some get more
-    IntermediariesZipCodes = [3013,3071,3021,3042,3033,3045,3031,3071,3081,3044,3029,3087,3047,3065]
+    amountIntermediaries = 100 #there are 14 areas ('deelgemeentes'), so this ensures that all get one and some get more
+    IntermediariesZipCodes = [3013,3084,3022,3072,3052,3151,3192,3077,3031,3033,3043,3060,3181,3195]
 
     def GetData(dbName, tableName):
         db = Database(dbName)
