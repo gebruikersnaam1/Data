@@ -1,5 +1,6 @@
 from jeugdfonds.controllers.components.Deelgemeente import Deelgemeente
 from jeugdfonds.models.ApplicantsModel import ApplicantsModel
+import datetime
 from flask import request
 
 class ApplicantsController:
@@ -9,14 +10,37 @@ class ApplicantsController:
 
     def GetAllApplicants(self):
         a = ApplicantsModel()
-        applicants = a.GetApplicantsInfo()
+        applicants = a.GetUnhelpedApplicantsInfo()
         return self.GetDeelgemeentesArray(applicants)
 
-    def GetPostValues(self):
-        return self.GetAllApplicants()
+    def GetGenderValue(self):
+        try: 
+            if request.form['gender'] == "Vrouw" or request.form['gender'] == "Man":
+                return request.form['gender']
+            else:
+                return "%%"
+        except:
+            return "%%"
+
+    def GetBirthOfAge(self,age : int, month : str, day : str):
+        year = (str(datetime.datetime.now().year - int(age)))
+        birth = "{y}-{m}-{d}".format(y=year,m=month,d=day)
+        return birth
+
+    def GetPostValues(self): 
+        try:
+            gender = self.GetGenderValue()  
+            minAge = self.GetBirthOfAge(request.form['minAge'],"01","01")
+            maxAge = self.GetBirthOfAge(request.form['maxAge'],"12","31")
+            return gender,minAge,maxAge
+        except:
+            return "%%","1900-01-01","3000-01-01"
 
     def GetFilterdApplicants(self):
-        return self.GetAllApplicants()
+        a = ApplicantsModel()
+        gender, minAge, maxAge = self.GetPostValues()
+        applicants = a.GetUnhelpedApplicantsWithSearchTerms(gender, minAge, maxAge)
+        return self.GetDeelgemeentesArray(applicants)
     
     def GetDeelgemeentesArray(self,applicants):
         Deelgemeentes = []
