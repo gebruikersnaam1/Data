@@ -13,3 +13,7 @@
 .HoekvanHollandstyle {
   background-color: lavender;
 }
+
+table th {
+  text-align: center;
+}
