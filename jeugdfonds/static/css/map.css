@@ -1,4 +1,15 @@
-.Map .MapInner .ImagesFirstRow {
+.MapsWrapper {
   display: flex;
+  width: 600px;
+  flex-flow: wrap;
+  margin: auto;
+  margin-top: 50px;
   justify-content: center;
+}
+
+.Rozenburgstyle,
+.Hoogvlietstyle,
+.Pernisstyle,
+.HoekvanHollandstyle {
+  background-color: lavender;
 }

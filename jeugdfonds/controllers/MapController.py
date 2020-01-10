@@ -13,7 +13,7 @@ class MapController:
         for g in self.listGemeentes:
             try:
                 indexValue = self.areaNames.index(g.areaName)
-                mapItems.append(MapItem(indexValue,"style",g))
+                mapItems.append(MapItem(indexValue,((g.areaName.replace(" ",""))+"style"),g))
             except:
                 print("Area not found in list")
         return sorted(mapItems, key = lambda i: i.listOrder) 
