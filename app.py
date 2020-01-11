@@ -8,12 +8,16 @@ app = Flask(__name__,root_path=os.path.join(os.getcwd(), 'jeugdfonds'))
 @app.route('/',methods=['POST','GET'])
 def index():
     c = Router.GetController("map")
-
     return render_template('index.html', controller = c)
 
 @app.route('/form',methods=['POST','GET'])
 def form():
     return render_template('form.html')
+
+@app.route('/chart',methods=['POST','GET'])
+def chart():
+    c = Router.GetController("chart")
+    return render_template('chart.html', controller=c)
 
 if __name__ == "__main__":
     app.run(debug=True)

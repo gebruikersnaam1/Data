@@ -1,0 +1,14 @@
+<div id="chartContainer" class="ChartWrapper"></div>
+
+<script src="{{url_for('static', filename='js/canvasjs/canvasjs.min.js')}}"></script>
+<script src="{{url_for('static', filename='js/chart.js')}}"></script>
+
+<textarea id="loadfield" style="display: none">
+{{controller.GetApplicantsCountJSON()}}
+</textarea>
+<script>
+  var x = document.getElementById("loadfield").value; 
+  const objs = JSON.parse(x);
+  SetChartValues(objs)
+
+</script>

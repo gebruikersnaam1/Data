@@ -5,6 +5,7 @@ class MapController:
                       "Delfshaven","Centrum","Charlois","Feijenoord","Ijsselmonde","Rozenburg","Hoogvliet","Pernis","Hoek van Holland"]
     listGemeentes = []
 
+
     def __init__(self, gemeentes):
         self.listGemeentes = gemeentes
     
