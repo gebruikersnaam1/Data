@@ -21,5 +21,4 @@ class ApplicantsModel(Connector):
                 WHERE a.Gender like '{qGender}' AND a.DateOfBirth > '{qMaxAge}' AND a.DateOfBirth < '{qMinAge}'  
                 GROUP BY z.Area ORDER BY count(*) DESC 
                 '''.format(qGender=gender, qMinAge=minAge,qMaxAge=maxAge)
-        print(query)
         return self.GetQuery(query)

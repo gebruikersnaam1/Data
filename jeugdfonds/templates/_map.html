@@ -7,23 +7,23 @@
       <form method="POST" action="/">
         <lable>Min Age</lable>
         <select name="minAge">
-          {% for x in range(4,19) %}
-          <option value="{{x}}">{{x}}</option>
+          {% for x in range(controller.MinAge,(controller.MaxAge+1)) %}
+          <option value="{{x}}" {% if x == controller.SelectedValues['minAge'] %} selected {% endif %}>{{x}}</option>
           {% endfor %}
         </select>
 
         <lable>Max Age</lable>
         <select name="maxAge">
-          {% for x in range(18,3,-1) %}
-          <option value="{{x}}">{{x}}</option>
+          {% for x in range((controller.MaxAge),(controller.MinAge-1),-1) %}
+          <option value="{{x}}" {% if x == controller.SelectedValues['maxAge'] %} selected {% endif %}>{{x}}</option>
           {% endfor %}
         </select>
 
         <lable>Gender</lable>
         <select name="gender">
-          <option value="both" selected>Both</option>
-          <option value="Man">Male</option>
-          <option value="Vrouw">Female</option>
+          <option value="both">Both</option>
+          <option value="Man" {% if 'Man' == controller.SelectedValues['gender'] %} selected {% endif %}>Male</option>
+          <option value="Vrouw" {% if 'Vrouw' == controller.SelectedValues['gender'] %} selected {% endif %}>Female</option>
         </select>
 
         <input type="submit" value="submit" />
