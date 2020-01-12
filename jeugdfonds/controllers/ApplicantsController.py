@@ -10,7 +10,7 @@ class ApplicantsController:
 
     def GetAllApplicants(self):
         a = ApplicantsModel()
-        applicants = a.GetUnhelpedApplicantsInfo()
+        applicants = a.GetUnhelpedApplicantsInfo(self.GetBirthOfAge(18,"01","01"))
         return self.GetDeelgemeentesArray(applicants)
 
     def GetGenderValue(self):
