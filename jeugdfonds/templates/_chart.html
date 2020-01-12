@@ -1,14 +1,22 @@
 <div id="chartContainer" class="ChartWrapper"></div>
 
-<script src="{{url_for('static', filename='js/canvasjs/canvasjs.min.js')}}"></script>
-<script src="{{url_for('static', filename='js/chart.js')}}"></script>
+<div class="ChartButtonsContainer">
+  <p>The areas are shown based on the amount of applicants. By default the top 5 is shown, but the amount can be changed below.
+  <div>
+    <a href="/chart?breakpoint=5"><button>Show top 5</button></a>
+    <a href="/chart?breakpoint=10"><button>Show top 10</button></a>
+    <a href="/chart?breakpoint=14"><button>Show top 14</button></a>
+  </div>
+</div>
 
-<textarea id="loadfield" style="display: none">
-{{controller.GetApplicantsCountJSON()}}
-</textarea>
+<div>
+  <textarea id="loadfield" style="display: none">
+    {{controller.GetApplicantsCountJSON()}}
+  </textarea>
+</div>
+
 <script>
   var x = document.getElementById("loadfield").value; 
   const objs = JSON.parse(x);
   SetChartValues(objs)
-
 </script>
