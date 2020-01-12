@@ -3,22 +3,25 @@
     <h1>Sign up for Jeugdfonds</h1>
     <form action="">
       First name:<br />
-      <input type="text" name="firstname" value="" />
+      <input type="text" name="firstname" value="{{controller.Applicant.FirstName}}" />
       <br /><br />
       Family Name Affix:<br />
-      <input type="text" name="familynameaffix" value="" />
+      <input type="text" name="familynameaffix" value="{{controller.Applicant.Affix}}" />
       <br /><br />
       Last name:<br />
-      <input type="text" name="lastname" value="" />
+      <input type="text" name="lastname" value="{{controller.Applicant.LastName}}" />
       <br /><br />
       Gender:<br />
-      <input type="text" name="gender" value="" />
+      <select>
+        <option value="Vrouw">Female</option>
+        <option value="Man">Man</option>
+      </select>
       <br /><br />
       ZIP code (numbers only):<br />
-      <input type="text" name="zipcode" value="" />
+      <input type="text" name="zipcode" value="{{controller.Applicant.ZipCode}}" />
       <br /><br />
       Date of Birth:<br />
-      <input type="text" name="dateofbirth" value="" />
+      <input type="text" name="dateofbirth" value="{{controller.Applicant.DateOfBirth}}" />
       <br /><br />
       <input type="submit" value="Submit" class="btn btn-success" />
     </form>

@@ -12,7 +12,8 @@ def index():
 
 @app.route('/form',methods=['POST','GET'])
 def form():
-    return render_template('form.html')
+    c = Router.GetController("form")
+    return render_template('form.html',controller=c)
 
 @app.route('/chart',methods=['POST','GET'])
 def chart():

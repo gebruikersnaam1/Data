@@ -1,10 +1,13 @@
-import jeugdfonds.controllers.components.Applicant from Applicant
+from jeugdfonds.controllers.components.Applicant import Applicant
+from flask import request
 
 class FormController:
-    applicant = None
+    message = ""
 
     def __init__(self):
-        self.firstName = ""
+        self.Applicant = Applicant()
+        if request.method == "POST":
+            self.InsertApplicant()
 
-    def InsertApplicant():
-        return
+    def InsertApplicant(self):
+        return True
