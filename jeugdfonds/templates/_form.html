@@ -1,29 +1,59 @@
 <div class="container">
-  <div class="HomeInnerTwo">
+  <div class="HomeInnerTwo" style="padding: 30px 0;">
     <h1>Sign up for Jeugdfonds</h1>
-    <form action="">
+    <form action="" style="margin-top: 30px;">
       First name:<br />
-      <input type="text" name="firstname" value="{{controller.Applicant.FirstName}}" />
-      <br /><br />
+      <input
+        type="text"
+        class="form-control"
+        name="firstname"
+        value="{{controller.Applicant.FirstName}}"
+      />
+      <br />
       Family Name Affix:<br />
-      <input type="text" name="familynameaffix" value="{{controller.Applicant.Affix}}" />
-      <br /><br />
+      <input
+        type="text"
+        class="form-control"
+        name="familynameaffix"
+        value="{{controller.Applicant.Affix}}"
+      />
+      <br />
       Last name:<br />
-      <input type="text" name="lastname" value="{{controller.Applicant.LastName}}" />
-      <br /><br />
+      <input
+        type="text"
+        class="form-control"
+        name="lastname"
+        value="{{controller.Applicant.LastName}}"
+      />
+      <br />
       Gender:<br />
-      <select>
+      <select class="form-control">
         <option value="Vrouw">Female</option>
         <option value="Man">Man</option>
       </select>
-      <br /><br />
+      <br />
       ZIP code (numbers only):<br />
-      <input type="text" name="zipcode" value="{{controller.Applicant.ZipCode}}" />
-      <br /><br />
+      <input
+        type="text"
+        class="form-control"
+        name="zipcode"
+        value="{{controller.Applicant.ZipCode}}"
+      />
+      <br />
       Date of Birth:<br />
-      <input type="text" name="dateofbirth" value="{{controller.Applicant.DateOfBirth}}" />
-      <br /><br />
-      <input type="submit" value="Submit" class="btn btn-success" />
+      <input
+        type="text"
+        class="form-control"
+        name="dateofbirth"
+        value="{{controller.Applicant.DateOfBirth}}"
+      />
+      <br />
+      <input
+        type="submit"
+        value="Submit"
+        class="btn"
+        style="background-color: #1453EC;color:white;"
+      />
     </form>
   </div>
 </div>
