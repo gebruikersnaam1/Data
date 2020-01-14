@@ -17,3 +17,12 @@
 table th {
   text-align: center;
 }
+
+.MapOfRotterdam {
+  padding: 30px 0;
+}
+
+.MapOfRotterdam .MapImage {
+  display: flex;
+  justify-content: center;
+}
