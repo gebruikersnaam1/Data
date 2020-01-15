@@ -26,9 +26,14 @@
       <input type="text" name="zipcode" value="{{controller.Applicant.ZipCode}}" />
       <br /><br />
       Date of Birth:<br />
-      <input type="text" name="dateofbirth" value="{{controller.Applicant.DateOfBirth}}" />
-      <br /><br />
-      <input type="submit" value="Submit" class="btn btn-success" />
+      <input
+        type="text"
+        class="form-control"
+        name="dateofbirth"
+        value="{{controller.Applicant.DateOfBirth}}"
+      />
+      <br />
+      <input type="submit" value="Submit" class="btn" />
     </form>
   </div>
 </div>

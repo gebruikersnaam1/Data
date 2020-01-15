@@ -1,0 +1,12 @@
+.Home .HomeInner {
+  background-color: #1453ec;
+  margin-top: 20px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: baseline;
+}
+
+.Home .HomeInner a {
+  padding: 15px;
+  color: #ffffff;
+}
