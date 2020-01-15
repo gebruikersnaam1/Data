@@ -28,10 +28,9 @@ Give examples
 
 ## Authors
 
-The authors of this application are:
+The developers of this application are:
 
 - Abdulvahid Kilic 
-- Anayeli Méndez Gutierrez 
 - Jürgen van der Heiden 
 
 

@@ -23,10 +23,10 @@ class Connector:
         except:
             print("Row insert rejected")
 
+
     def RunCreateQuery(self,query):
-        try:
-            c = self.conn.cursor() #return the connector to insert,select, delete and update the database
-            c.execute(query) #execute query
-            self.conn.commit() #commit
-        except:
-            print("Row rejected")
+
+        c = self.conn.cursor() #return the connector to insert,select, delete and update the database
+        c.execute(query) #execute query
+        self.conn.commit() #commit
+        

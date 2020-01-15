@@ -1,9 +1,13 @@
 <div class="container">
   <div class="HomeInnerTwo">
     <h1>Sign up for Jeugdfonds</h1>
+
+    {% if controller.Message != "" %}
+      <p>{{ controller.Message }}</p>
+    {% endif %}
     <form action="" method="POST">
       First name:<br />
-      <input type="text" name="firstname" value="{{controller.Applicant.FirstName}}" />
+      <input type="text" name="firstname" value="{{controller.Applicant.FirstName}}" autofocus="on"/>
       <br /><br />
       Family Name Affix:<br />
       <input type="text" name="affix" value="{{controller.Applicant.Affix}}" />
@@ -13,8 +17,9 @@
       <br /><br />
       Gender:<br />
       <select name="gender">
-        <option value="Vrouw">Female</option>
-        <option value="Man">Man</option>
+        <option value="%%">Make a choice</option>
+        <option value="Vrouw" {% if 'Vrouw' == controller.Applicant.Gender %} selected {% endif %}>Female</option>
+        <option value="Man" {% if 'Man' == controller.Applicant.Gender %} selected {% endif %}>Man</option>
       </select>
       <br /><br />
       ZIP code (numbers only):<br />

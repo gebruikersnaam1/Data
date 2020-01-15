@@ -25,6 +25,7 @@ class MapController:
             self.SelectedValues['minAge'] = self.MinAge
             self.SelectedValues['maxAge'] = self.MaxAge
             self.SelectedValues['gender'] = "%%"
+            
     def CreateMapItems(self):
         mapItems = []
         areasFound = []
