@@ -28,27 +28,18 @@
 
         <input type="submit" value="Submit" class="btn btn-info" />
       </form>
-      <div class="Maps">
-        <div class="MapsWrapper">
-          {% for d in controller.GetMapItems() %}
-          <div class="{{d.className}}">
-            <img
-              src="{{ d.GetImage()}}"
-              alt="{{ d.deelgemeente.areaName}}"
-              title="{{ d.deelgemeente.areaName}} - {{d.deelgemeente.applicants}}"
-            />
-          </div>
-          {% endfor %}
+
+      <div class="MapsWrapper">
+        {% for d in controller.GetMapItems() %}
+        <div class="{{d.className}}">
+          <img
+            src="{{ d.GetImage()}}"
+            alt="{{ d.deelgemeente.areaName}}"
+            title="{{ d.deelgemeente.areaName}} - {{d.deelgemeente.applicants}}"
+          />
         </div>
-        <div class="MapOfRotterdam">
-          <h4>Legenda</h4>
-          <ul>
-            <li><strong>Green</strong>: Low amount of children that needs help</li>
-            <li><strong>Orange</strong>: Medium amount of children that needs help</li>
-            <li><strong>Red</strong>: High amount of children that needs help</li>
-          </ul>
-        </div>
-      </div>
+        {% endfor %}
+       </div>
     </div>
   </div>
 </div>

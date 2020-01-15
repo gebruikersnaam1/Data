@@ -1,45 +1,25 @@
 <div class="container">
   <div class="HomeInnerTwo">
     <h1>Sign up for Jeugdfonds</h1>
-    <form action="">
+    <form action="" method="POST">
       First name:<br />
-      <input
-        type="text"
-        class="form-control"
-        name="firstname"
-        value="{{controller.Applicant.FirstName}}"
-      />
-      <br />
+      <input type="text" name="firstname" value="{{controller.Applicant.FirstName}}" />
+      <br /><br />
       Family Name Affix:<br />
-      <input
-        type="text"
-        class="form-control"
-        name="familynameaffix"
-        value="{{controller.Applicant.Affix}}"
-      />
-      <br />
+      <input type="text" name="affix" value="{{controller.Applicant.Affix}}" />
+      <br /><br />
       Last name:<br />
-      <input
-        type="text"
-        class="form-control"
-        name="lastname"
-        value="{{controller.Applicant.LastName}}"
-      />
-      <br />
+      <input type="text" name="lastname" value="{{controller.Applicant.LastName}}" />
+      <br /><br />
       Gender:<br />
-      <select class="form-control">
+      <select name="gender">
         <option value="Vrouw">Female</option>
         <option value="Man">Man</option>
       </select>
-      <br />
+      <br /><br />
       ZIP code (numbers only):<br />
-      <input
-        type="text"
-        class="form-control"
-        name="zipcode"
-        value="{{controller.Applicant.ZipCode}}"
-      />
-      <br />
+      <input type="text" name="zipcode" value="{{controller.Applicant.ZipCode}}" />
+      <br /><br />
       Date of Birth:<br />
       <input
         type="text"
