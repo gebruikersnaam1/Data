@@ -20,5 +20,9 @@ def chart():
     c = Router.GetController("chart")
     return render_template('chart.html', controller=c)
 
+@app.route('/form_success',methods=['GET'])
+def form_success():
+    return render_template('form_success.html')
+
 if __name__ == "__main__":
     app.run(debug=True)

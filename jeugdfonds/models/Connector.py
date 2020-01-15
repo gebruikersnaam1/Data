@@ -7,13 +7,13 @@
 import sqlite3 #to work with SQLlite
 
 class Connector:
-    conn = None
 
-    def __init__(self):
-        self.conn = sqlite3.connect("jeugdfonds/models/Jeugdfonds.sql")  # loading the database (creating if name isn't found)
-    
+    def GetCon(self):
+        return sqlite3.connect("jeugdfonds/models/Jeugdfonds.sql")
+
     def GetQuery(self,query):
-        c = self.conn.cursor()
+        conn = self.GetCon()
+        c = conn.cursor()
         c.execute(query)
         return c.fetchall()
         try:
@@ -22,10 +22,12 @@ class Connector:
             return c.fetchall()
         except:
             print("Row insert rejected")
+        c.close()
 
 
     def RunCreateQuery(self,query):
-        c = self.conn.cursor() #return the connector to insert,select, delete and update the database
+        c = self.GetCon()
         c.execute(query) #execute query
-        self.conn.commit() #commit
+        c.commit() #commit
+        c.close()
         

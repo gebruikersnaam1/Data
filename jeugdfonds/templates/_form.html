@@ -1,3 +1,8 @@
+{% if controller.entered == True %}
+     <script>
+      FormSuccess()
+     </script>
+{% endif %}
 <div class="container">
   <div class="HomeInnerTwo">
     <h1>Sign up for Jeugdfonds</h1>
@@ -5,6 +10,7 @@
     {% if controller.Message != "" %}
       <p>{{ controller.Message }}</p>
     {% endif %}
+    
     <form action="" method="POST">
       First name:<br />
       <input type="text" name="firstname" value="{{controller.Applicant.FirstName}}" autofocus="on"/>
