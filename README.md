@@ -1,6 +1,6 @@
-# Project Jeugdfonds
-
-Hogeschool Rotterdam was looking for company/organization willing to offer there corporation by allowing students to work with their real-world data and work on a real-world solution. Jeugdfonds offered their data and wanted their data visualized – which this application has accomplished.  
+# Minor Data Engineering Portfolio InCubeData
+Within this repository the work of the members of InCubeData (a team name for the minor) can be found that was required to do for minor Data Engineering. This includes a project developed for the organization Jeugdfonds, a tool to enable the data to be converted and a game that teaches the user about data quality.
+Important to note is that time was scarce and did effect the outcome. Given that c 
 
 ## Getting Started
 
@@ -8,23 +8,9 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-To run this application the following is needed:
-
+To run the applications relating to the minor are:
 - Python 3.8
 - Flask
-
-install something
-  1) pipenv shell
-  2) pinenv install [package name]
-  3) pipenv lock
-
-run it
-  1) pipenv shell
-  2) python app.py
-
-```
-Give examples
-```
 
 ## Authors
 
@@ -41,5 +27,5 @@ This project is licensed under the  Apache License 2.0 - see the [LICENSE.md](LI
 ## Acknowledgments
 
 - Jeugdfonds for working along by sharing information and data
-- All the experts that shared there data during the minor Data Engineering
+- All the experts that shared their data during the minor Data Engineering
 
