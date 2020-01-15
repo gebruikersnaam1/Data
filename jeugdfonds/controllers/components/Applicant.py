@@ -1,12 +1,12 @@
 import datetime
 
 class Applicant:
-    FirstName = ""
-    Affix = ""
-    LastName = ""
-    Gender = ""
-    ZipCode = ""
-    DateOfBirth = ""
+    FirstName = "Piet"
+    Affix = "van der"
+    LastName = "Melkboer"
+    Gender = "Man"
+    ZipCode = "3085"
+    DateOfBirth = "2010-01-01"
 
     def SetValues(self,firstName : str,affix : str,lastname : str,gender :str,zipCode : int, dateOfBirth):
         self.FirstName = self.FilterName(firstName)

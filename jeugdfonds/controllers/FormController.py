@@ -4,12 +4,7 @@ from flask import request, Markup
 
 class FormController:
     Message = ""
-    FirstName = ""
-    Affix = ""
-    LastName = ""
-    Gender = ""
-    ZipCode = ""
-    DateOfBirth = ""
+   
 
     def __init__(self):
         self.Applicant = Applicant()
@@ -22,7 +17,7 @@ class FormController:
         
         if self.IsSendValuesValid() == True:
             a = ApplicantsModel()
-            self.Message = a.InsertApplicant(self.FirstName, self.Affix, self.LastName,self.Gender,self.ZipCode, self.DateOfBirth)
+            self.Message = a.InsertApplicant(self.Applicant.FirstName, self.Applicant.Affix, self.Applicant.LastName,self.Applicant.Gender,self.Applicant.ZipCode, self.Applicant.DateOfBirth)
         else:
             self.Message = Markup(self.Message)
     

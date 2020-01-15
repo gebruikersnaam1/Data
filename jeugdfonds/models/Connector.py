@@ -25,7 +25,6 @@ class Connector:
 
 
     def RunCreateQuery(self,query):
-
         c = self.conn.cursor() #return the connector to insert,select, delete and update the database
         c.execute(query) #execute query
         self.conn.commit() #commit

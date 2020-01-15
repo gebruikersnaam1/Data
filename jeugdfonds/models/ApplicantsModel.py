@@ -28,6 +28,6 @@ class ApplicantsModel(Connector):
     def InsertApplicant(self,firstname: str,affix:str,lastname:str,gender:str,zipcode:int,birthDate : date):
         query = '''
             INSERT INTO Applicant (ID,FirstName,Affix,lastname,DateOfBirth,ZipCode,Gender) 
-            VALUES((SELECT last_insert_rowid()+2),'{qFirstName}','{qAffix}','{qLastname}','{qDate}','{qZipCode}','{qGender}');
+            VALUES((SELECT (ROWID+2) FROM Applicant ORDER BY ROWID DESC),'{qFirstName}','{qAffix}','{qLastname}','{qDate}','{qZipCode}','{qGender}');
             '''.format(qFirstName=firstname,qAffix=affix,qLastname=lastname,qDate = birthDate, qZipCode = zipcode,qGender = gender)
         return self.RunCreateQuery(query)
