@@ -1,3 +1,12 @@
+.Map .MapInner {
+  margin-top: 30px;
+}
+
+.Map .MapInner form input.btn-info {
+  background-color: #1453ec;
+  border-color: #1453ec;
+}
+
 .MapsWrapper {
   display: flex;
   width: 600px;
