@@ -26,6 +26,12 @@
           <option value="Vrouw" {% if 'Vrouw' == controller.SelectedValues['gender'] %} selected {% endif %}>Female</option>
         </select>
 
+        <lable>Status of applicant:</lable>
+        <select name="status">
+          <option value="False" {% if 'False' == controller.SelectedValues['status'] %} selected {% endif %}>Unhelped</option>
+          <option value="True" {% if 'True' == controller.SelectedValues['status'] %} selected {% endif %}>helped</option>
+        </select>
+
         <input type="submit" value="Submit" class="btn btn-info" />
       </form>
 

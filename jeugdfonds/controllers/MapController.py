@@ -9,7 +9,7 @@ class MapController:
     MapItems = []
     MinAge = 4
     MaxAge = 18
-    SelectedValues = {"minAge" : MinAge, "maxAge" : MaxAge, "gender": "%%"}
+    SelectedValues = {"minAge" : MinAge, "maxAge" : MaxAge, "gender": "%%", "status": "False"}
 
     def __init__(self, gemeentes):
         self.listGemeentes = gemeentes
@@ -21,10 +21,13 @@ class MapController:
             self.SelectedValues['minAge'] = int(request.form['minAge'])
             self.SelectedValues['maxAge'] = int(request.form['maxAge'])
             self.SelectedValues['gender'] = str(request.form['gender'])
+            self.SelectedValues['status'] = str(request.form['status'])
         except:
             self.SelectedValues['minAge'] = self.MinAge
             self.SelectedValues['maxAge'] = self.MaxAge
             self.SelectedValues['gender'] = "%%"
+            self.SelectedValues['status'] = "False"
+
             
     def CreateMapItems(self):
         mapItems = []

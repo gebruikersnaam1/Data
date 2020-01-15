@@ -22,6 +22,15 @@ class ApplicantsController:
         except:
             return "%%"
 
+    def GetApplicantStatus(self):
+        try: 
+            if request.form['status'] == "False" or request.form['status'] == "True":
+                return request.form['status']
+            else:
+                return "%%"
+        except:
+            return "%%"
+
     def GetBirthOfAge(self,age : int, month : str, day : str):
         year = (str(datetime.datetime.now().year - int(age)))
         birth = "{y}-{m}-{d}".format(y=year,m=month,d=day)
@@ -32,14 +41,15 @@ class ApplicantsController:
             gender = self.GetGenderValue()  
             minAge = self.GetBirthOfAge(request.form['minAge'],"01","01")
             maxAge = self.GetBirthOfAge(request.form['maxAge'],"12","31")
-            return gender,minAge,maxAge
+            approved = self.GetApplicantStatus()
+            return gender,minAge,maxAge, approved
         except:
-            return "%%","1900-01-01","3000-01-01"
+            return "%%","1900-01-01","3000-01-01","%%"
 
     def GetFilterdApplicants(self):
         a = ApplicantsModel()
-        gender, minAge, maxAge = self.GetPostValues()
-        applicants = a.GetUnhelpedApplicantsWithSearchTerms(gender, minAge, maxAge)
+        gender, minAge, maxAge,approved = self.GetPostValues()
+        applicants = a.GetUnhelpedApplicantsWithSearchTerms(gender, minAge, maxAge,approved)
         return self.GetDeelgemeentesArray(applicants)
     
     def GetDeelgemeentesArray(self,applicants):
