@@ -1,7 +1,8 @@
-RewriteEngine on
+RewriteEngine On
+RewriteBase /
+RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_FILENAME}\.php -f
-RewriteRule ^(.*)$ $1.php
+RewriteRule ^(.*)$ index.php?param=$1 [L,NC]
 
 ErrorDocument 400 /index.php
 ErrorDocument 401 /index.php
