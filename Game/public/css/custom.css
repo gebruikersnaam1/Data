@@ -1,12 +1,36 @@
+html,body{
+    font-size: 1.1em;
+    font-family: monospace;
+    background-color: #DDDDDD;
+    color: #001f3f;
+    height: 100%;
+    widows: 100%;
+}
+
+.highscoreTable{
+   
+}
 .menuLogo{
     height: 100%;
     width: auto;
     max-height: 55px;
 }
 
+h1{
+    font-size: 3.5em;
+    text-align: left;
+    margin-top: 0.5em;
+    margin-bottom: 1em;
+}
 .pageImage{
     width: 100%;
     height: auto;
     max-height: 300px;
     border: 1px solid black;
+}
+
+.websiteMenu{
+    background-color: #FF4F25;
+    font-weight: bold;
+    font-size: 1.2em;
 }

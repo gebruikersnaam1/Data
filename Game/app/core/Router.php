@@ -35,8 +35,14 @@ class Router{
     function GetController(){
             $controller;
             switch($this->controllerName){
+                case "highscore":
+                    $controller = new HighscoreController();
+                break;
                 case "user":
                     $controller = new UserController();
+                break;
+                case "game":
+                    $controller = new GameController();
                 break;
                 default:
                    $controller = new PageController();

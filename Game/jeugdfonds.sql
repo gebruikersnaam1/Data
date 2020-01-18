@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 18 jan 2020 om 16:59
+-- Gegenereerd op: 18 jan 2020 om 22:29
 -- Serverversie: 10.4.11-MariaDB
 -- PHP-versie: 7.4.1
 
@@ -37,6 +37,32 @@ CREATE TABLE `highscore` (
 -- --------------------------------------------------------
 
 --
+-- Tabelstructuur voor tabel `possibleanswers`
+--
+
+CREATE TABLE `possibleanswers` (
+  `id` int(11) NOT NULL,
+  `questionID` int(11) NOT NULL,
+  `content` text NOT NULL,
+  `correct` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Tabelstructuur voor tabel `questions`
+--
+
+CREATE TABLE `questions` (
+  `ID` int(11) NOT NULL,
+  `question` text NOT NULL,
+  `difficult` tinyint(1) NOT NULL,
+  `extraInfo` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Tabelstructuur voor tabel `user`
 --
 
@@ -59,10 +85,38 @@ ALTER TABLE `highscore`
   ADD PRIMARY KEY (`username`,`insert_date`);
 
 --
+-- Indexen voor tabel `possibleanswers`
+--
+ALTER TABLE `possibleanswers`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexen voor tabel `questions`
+--
+ALTER TABLE `questions`
+  ADD PRIMARY KEY (`ID`);
+
+--
 -- Indexen voor tabel `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`username`);
+
+--
+-- AUTO_INCREMENT voor geëxporteerde tabellen
+--
+
+--
+-- AUTO_INCREMENT voor een tabel `possibleanswers`
+--
+ALTER TABLE `possibleanswers`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT voor een tabel `questions`
+--
+ALTER TABLE `questions`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

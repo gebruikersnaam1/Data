@@ -100,15 +100,16 @@ class UserController extends Controller{
     }
 
     public function Run(){
+        if(isset($this->parameters[0]) and $this->parameters[0] == "logout")
+            $this->Logout();
+        $this->ValidateNoAuthentication();
+
         $this->model = new UserModel();
         $this->user = new User();
         if(isset($_POST['registration']))
             $this->Registration();
         if(isset($_POST['login']))
             $this->Login();
-        if(isset($this->parameters[0]) and $this->parameters[0] == "logout"){
-            $this->Logout();
-        }
     }
 }
 ?>

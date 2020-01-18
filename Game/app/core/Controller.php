@@ -10,6 +10,21 @@ abstract class Controller{
     protected $pagePath;
     protected $errorMessage;
 
+
+    protected function ValidateAuthentication(){
+        if(!isset($_SESSION['username'])){
+            header("Location: /user/login");
+            exit();
+        }
+    }
+
+    protected function ValidateNoAuthentication(){
+        if(isset($_SESSION['username'])){
+            header("Location: /home");
+            exit();
+        }
+    }
+
     function SetValues($pageName,$parameters){
         $this->pageName = $pageName;
         $this->parameters = $parameters;

@@ -1,0 +1,30 @@
+.gameContainer{
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    display: block;
+    background-color: #1051EC;
+    overflow: hidden;
+}
+
+.gameTitleContainer{
+    margin-top: 50px;
+    padding: 10px;
+    min-height: 500px;
+    height: auto;
+    background-color: white;
+    overflow: hidden;
+}
+
+.gameTitleContainer textarea{
+    
+}
+
+.gameTitleContainer button{
+    display: block;
+    min-height: 75px;
+    margin: 10px auto 10px auto;
+    min-width: 100%;
+    width: auto;
+    max-width: 900px;
+}
