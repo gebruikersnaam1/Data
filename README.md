@@ -8,9 +8,12 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-To run the applications relating to the minor are:
+To run the project:
 - Python 3.8
 - Flask
+
+To run the game
+- PHP 7.4.1
 
 ## Authors
 

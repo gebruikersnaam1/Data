@@ -9,7 +9,7 @@
 
         <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
             <div class="navbar-nav">
-                <?php if(!isset($_SESSION['user'])){ ?>
+                <?php if(!isset($_SESSION['username'])){ ?>
                     <a href="/user/login" class="nav-item nav-link active">Login</a>
                     <a href="/user/registration" class="nav-item nav-link">Registration</a>
                 <?php } else { ?> 

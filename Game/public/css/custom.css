@@ -1,0 +1,12 @@
+.menuLogo{
+    height: 100%;
+    width: auto;
+    max-height: 55px;
+}
+
+.pageImage{
+    width: 100%;
+    height: auto;
+    max-height: 300px;
+    border: 1px solid black;
+}

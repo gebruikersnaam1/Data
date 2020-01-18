@@ -14,6 +14,7 @@
   <!-- CSS -->
   <link rel="stylesheet" href="<?php print(cssPath); ?>normalize.css">
   <link rel="stylesheet" href="<?php print(cssPath); ?>main.css">
+  <link rel="stylesheet" href="<?php print(cssPath); ?>custom.css">
   <link rel="stylesheet" href="<?php print(cssPath); ?>bootstrap.min.css">
 
 

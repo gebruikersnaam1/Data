@@ -1,4 +1,11 @@
 <h1>Registration</h1>
+<?php
+if(!empty($this->errorMessage)){
+?>
+<div class="alert alert-warning" role="alert">
+  <?php print($this->errorMessage);?>
+</div>
+<?php } ?>
 
 <form class="form-horizontal" action="" method="POST">
  <!-- Firstname -->
@@ -33,7 +40,7 @@
   <div class="form-group">
     <label class="control-label col-sm-2" for="password">Password:</label>
     <div class="col-sm-10">
-      <input type="text" class="form-control" name="password" required>
+      <input type="password" class="form-control" name="password" required>
     </div>
   </div>
 

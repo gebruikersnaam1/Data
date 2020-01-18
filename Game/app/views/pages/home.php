@@ -1,4 +1,5 @@
 <h1>Home</h1>
+<img src="<?php print(imgPath); ?>home-screen.jpg" alt="Quiz" class="pageImage" />
 
 <p>
 Welcome! You every wanted to be part of a data engineering world? Do your part to improve data quality? 

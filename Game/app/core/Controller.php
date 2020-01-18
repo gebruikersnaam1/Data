@@ -8,6 +8,7 @@ abstract class Controller{
     protected $compomentPath;
     protected $containerPath;
     protected $pagePath;
+    protected $errorMessage;
 
     function SetValues($pageName,$parameters){
         $this->pageName = $pageName;
