@@ -3,6 +3,10 @@
 
 class GameController extends Controller{
 
+    function __construct(){
+        $this->ValidateAuthentication();
+    }
+
     public function View(){
         include_once(($this->viewPath."game.php"));
     }
