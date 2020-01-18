@@ -1,8 +1,9 @@
 <?php
 
 class Router{
-    public $page = "home";
-    public $parameter = array("");
+    private $page = "home";
+    private $parameter = array("");
+    private $controllerName = "";
 
     function __construct(){
         $url = $this->SetNameValues();
@@ -18,19 +19,25 @@ class Router{
     function SetNameValues(){
         if(!isset($_GET['param']))
             return;
-
+        
         $parts = explode("/",strtolower($_GET['param']));
+        $this->controllerName = $parts[0];
 
-        if(count($parts) > 0)
+        if(count($parts) == 1){
                 $this->page = $this->GetPage($parts[0]);
-
-        if(count($parts) > 1)
+        }
+        elseif(count($parts) > 1){
+            $this->page = $this->GetPage($parts[0]."/".$parts[1]);
             $this->parameter = array_slice($parts,1,(count($parts)-1));
+        }
     }
 
     function GetController(){
             $controller;
-            switch($this->page){
+            switch($this->controllerName){
+                case "user":
+                    $controller = new UserController();
+                break;
                 default:
                    $controller = new PageController();
             }

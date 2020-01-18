@@ -8,7 +8,7 @@ date_default_timezone_set("Europe/Amsterdam");
 session_start();
 
 // insert values
-$foldersInOrder = array("app/core/*.php","app/models/*.php","app/controllers/*.php");
+$foldersInOrder = array("app/core/*.php","app/objects/*.php","app/models/*.php","app/controllers/*.php");
 
 foreach ($foldersInOrder as $fName){
     foreach (glob($fName) as $filename)

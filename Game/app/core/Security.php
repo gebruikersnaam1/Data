@@ -2,6 +2,10 @@
 
 class Security{
     
+    function ValidateString($string){
+        
+    }
+
 }
 
 ?>
