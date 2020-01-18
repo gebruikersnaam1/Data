@@ -1,5 +1,13 @@
 <h1>Login</h1>
 
+<?php
+if(!empty($this->errorMessage)){
+?>
+<div class="alert alert-warning" role="alert">
+  <?php print($this->errorMessage);?>
+</div>
+<?php } ?>
+
 <form class="form-horizontal" action="" method="POST">
   <!-- username -->
   <div class="form-group">

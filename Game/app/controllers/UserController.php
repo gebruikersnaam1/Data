@@ -8,6 +8,40 @@ class UserController extends Controller{
         include_once(($this->viewPath."default.php"));
     }
 
+
+    /************************************************ 
+     * login methods
+    *************************************************/
+
+    private function GetLoginValue(){
+        $l;
+        $p;
+        if(isset($_POST['username']))
+            $l = $this->security->ValidateString($_POST['username']);
+        if(isset($_POST['password']))
+            $p = $_POST['password'];
+        return array($l,$p);
+    }
+    private function GetLoginValues(){
+        list($loginName,$password) = $this->GetLoginValue();
+        if($loginName == "" OR $loginName == False)
+            return False;
+        if(!$this->model->IsUsernameAvailable($loginName))
+            return False;
+        return array($this->model->GetUserPassword($loginName),$password,$loginName);
+    }
+    private function Login(){
+        list($pwd,$filledInPassword,$username) = $this->GetLoginValues();
+        if(!$pwd)
+            $this->errorMessage = "Username or/and password als not valid.";
+
+        if (password_verify($filledInPassword, $pwd))
+            $this->SetSession($username);
+        else 
+            $this->errorMessage = "Username or/and password als not valid.";
+
+    }
+
     /************************************************ 
      * sessions methods
     *************************************************/
@@ -33,9 +67,9 @@ class UserController extends Controller{
         if(isset($_POST['lastname']))
             $this->user->lastname = $this->security->ValidateString($_POST['lastname']);
         if(isset($_POST['username']))
-            $this->user->username = $this->security->ValidateString($_POST['username']);
+            $this->user->username = strtolower($this->security->ValidateString($_POST['username']));
         if(isset($_POST['password']))
-            $this->user->SetPassword($this->security->ValidateString($_POST['password']));
+            $this->user->SetPassword($_POST['password']);
     }
 
     private function IsUsernameFree(){

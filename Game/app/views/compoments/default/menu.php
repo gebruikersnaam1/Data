@@ -13,7 +13,7 @@
                     <a href="/user/login" class="nav-item nav-link active">Login</a>
                     <a href="/user/registration" class="nav-item nav-link">Registration</a>
                 <?php } else { ?> 
-                    <a href="/highscore/show" class="nav-item nav-link">High score</a>
+                    <a href="/highscore/show" class="nav-item nav-link">Highscore</a>
                     <a href="/game/quiz" class="nav-item nav-link">Quiz</a>
                     <a href="/user/logout" class="nav-item nav-link">Logout</a>
                 <?php } ?>

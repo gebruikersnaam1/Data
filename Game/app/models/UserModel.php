@@ -15,6 +15,17 @@ class UserModel extends Model{
         $stmt->close();
     }
 
+    public function GetUserPassword($username){
+        $u = $this->myconn->real_escape_string($username);
+        $stmt = $this->myconn->prepare("SELECT password FROM user WHERE username = ?");
+        $stmt->bind_param("s", $u);
+        $stmt->execute();
+        $stmt->bind_result($password);
+        $stmt->fetch();
+        $stmt->close();
+        return $password;
+    }
+
     public function IsUsernameAvailable($username){
         $u = $this->myconn->real_escape_string($username);
 
@@ -24,7 +35,6 @@ class UserModel extends Model{
         $stmt->store_result();
         $nrows1 = $stmt->num_rows;
         $stmt->close();
-        print($nrows1);
         return $nrows1;
     }
 }
