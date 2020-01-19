@@ -20,7 +20,9 @@ class GameController extends Controller{
             $this->Run500ErrorCode();
         shuffle($this->questions);
         foreach($this->questions as $q){
-            $q->SetPossibleAnswers($this->model->GetPossibleAnswers($q->GetID()));
+            $possibleAnswers = $this->model->GetPossibleAnswers($q->GetID());
+            shuffle($possibleAnswers);
+            $q->SetPossibleAnswers($possibleAnswers);
         }
     }
 }
