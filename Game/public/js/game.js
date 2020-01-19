@@ -55,9 +55,9 @@ function CalculateScore(outcome,time){
 
 function ShowCorrectAnswer(outcome,CurrentQuestion){
     if(outcome == 1){
-        alert("You answered wrong! The data just got worse");
-    }else{
         alert("Who answered correctly? You did! ");
+    }else{
+        alert("You answered wrong! The data just got worse");
     }
 }
 
@@ -74,8 +74,9 @@ function SendForm(newScore) {
     form.submit();
 }
 
-function ValidateAnswer(buttonValue){
-    outcome = document.getElementById(buttonValue).value;
+function ValidateAnswer(buttonName){
+    outcome = document.getElementById(buttonName).value;
+    alert(outcome);
     if(outcome != 0){
         TotalScore += CalculateScore(outcome,GetTimeScore()); //0 or 1
     }
