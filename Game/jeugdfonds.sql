@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 19 jan 2020 om 09:29
+-- Gegenereerd op: 19 jan 2020 om 12:19
 -- Serverversie: 10.4.11-MariaDB
 -- PHP-versie: 7.4.1
 
@@ -33,6 +33,22 @@ CREATE TABLE `highscore` (
   `insert_date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `score` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Gegevens worden geëxporteerd voor tabel `highscore`
+--
+
+INSERT INTO `highscore` (`username`, `insert_date`, `score`) VALUES
+('abv', '2020-01-19 11:15:50', 4000),
+('deford', '2020-01-19 11:16:54', 5600),
+('gebruikersnaam', '2020-01-19 11:15:25', 1000),
+('gmaas', '2020-01-19 11:16:42', 6000),
+('hemsworth', '2020-01-19 11:19:16', 4000),
+('koos', '2020-01-19 11:18:48', 10291),
+('lotte', '2020-01-19 11:16:34', 8899),
+('ouwefonds', '2020-01-19 11:15:36', 1500),
+('plugm', '2020-01-19 11:12:29', 999999),
+('ubert', '2020-01-19 11:12:17', 999999);
 
 -- --------------------------------------------------------
 
@@ -123,7 +139,17 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`username`, `password`, `firstname`, `affix`, `lastname`) VALUES
-('ouwefonds', '$2y$10$eNR7UwwX7BDJr33wlrN5yuKhHbNk7ntwhLcNIH7Ummkt8JuKPPCr6', 'Jaap', '', 'Emtec');
+('abv', '$2y$10$MR57k7QBWnWhDKQNICzkp.oewvAJFV6/AkQgfh3tvvG5sWc/HnBpe', 'Abdulvahid', '', 'Kilic'),
+('deford', '$2y$10$kcQKGQUdY16pUCe4RCkbX.37v71gdq6kjhEVi3MIqOJi4BMQ8SXRy', 'Devon', '', 'Crawford'),
+('dujaa', '$2y$10$xlaEEiJwT2DnNtXI40/5puoGNp77iUA./Oanyetszzr8aQvBdlW3a', 'anouk', '', 'Dujardin'),
+('gebruikersnaam', '$2y$10$.A1iY9MyszgXcVvY5M7do.X8k63LtuljSmxlBdGOrsJyjCmK1l/Gm', 'Chris', '', 'Achternaam'),
+('gmaas', '$2y$10$ziw/jQsge6Li2mCry1HEM.XeI27GEJhNHPQxzqif2h33cBYV0UB9q', 'Gwen', '', 'Maas'),
+('hemsworth', '$2y$10$USYF/8Uum4ajrd6I9dUx7eN2bReUO8RqBhsaQoLsyLVFp1ym1adJS', 'Sara', 'der', 'Bennik'),
+('koos', '$2y$10$ZWEcPgqs855vAy/bEFNGt.ZMoGs5MFIzudSzE9p6G5wBfoz5kJqmK', 'Roos', 'de', 'Kole'),
+('lotte', '$2y$10$bEB/T3dNoxyXCRGB6mos4uOklqTwbsP3NeBce6g.d8wIlCv52exkC', 'Lotte', '', 'Muilwijk'),
+('ouwefonds', '$2y$10$eNR7UwwX7BDJr33wlrN5yuKhHbNk7ntwhLcNIH7Ummkt8JuKPPCr6', 'Jaap', '', 'Emtec'),
+('plugm', '$2y$10$29OmCD5F8i54RlwNYqzHue7ROZoTk8uNuJOJINy.NBusSQkKrs/92', 'George', '', 'Pluimakers'),
+('ubert', '$2y$10$edcV6d.vQmSiFf3Er9OvJOglOOioOZpPuThQF7U3wu4ru.LQ3WX3G', 'Tanja', '', 'Ubert');
 
 --
 -- Indexen voor geëxporteerde tabellen

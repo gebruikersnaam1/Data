@@ -2,6 +2,17 @@
 
 class HighscoreModel extends Model{
 
+
+    public function InsertNewRecord($username,$score){
+        $u = $this->myconn->real_escape_string($username);
+        $s = $this->myconn->real_escape_string($score);
+
+        $stmt = $this->myconn->prepare("INSERT INTO highscore (username, score) VALUES (?, ?)");
+        $stmt->bind_param("ss", $u,$s);
+        $stmt->execute();
+        $stmt->close();
+    }
+
     public function GetPersonHighScore($username){
         $u = $this->myconn->real_escape_string($username);
         

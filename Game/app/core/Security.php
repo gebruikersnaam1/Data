@@ -8,6 +8,12 @@ class Security{
         return False;
     }
 
+    function ValidateNumber($int){
+        if(is_numeric($int))
+            return $int;
+        return False;
+    }
+
 }
 
 ?>

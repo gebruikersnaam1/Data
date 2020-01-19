@@ -43,8 +43,8 @@ function SetNewQuestion(questionID){
     document.getElementById('currentNumber').textContent = (CurrentQuestion+1);
 }
 
-function CalculateScore(score,time){
-    if (score == 0){
+function CalculateScore(outcome,time){
+    if (outcome == 0){
         return 0;
     }
     else{
@@ -53,12 +53,35 @@ function CalculateScore(score,time){
     }
 }
 
+function ShowCorrectAnswer(outcome,CurrentQuestion){
+    if(outcome == 1){
+        alert("You answered wrong! The data just got worse");
+    }else{
+        alert("Who answered correctly? You did! ");
+    }
+}
+
+function SendForm(newScore) {
+    var form = document.createElement('form');
+    document.body.appendChild(form);
+    form.method = 'post';
+    form.action = "/highscore/new";
+    var input = document.createElement('input');
+    input.type = 'hidden';
+    input.name = "newScore";
+    input.value = newScore;
+    form.appendChild(input);
+    form.submit();
+}
+
 function ValidateAnswer(buttonValue){
-    score = document.getElementById(buttonValue).value;
-    TotalScore += CalculateScore(score,GetTimeScore()); //0 or 1
+    outcome = document.getElementById(buttonValue).value;
+    if(outcome != 0){
+        TotalScore += CalculateScore(outcome,GetTimeScore()); //0 or 1
+    }
+    ShowCorrectAnswer(outcome,CurrentQuestion);
     if(CurrentQuestion >= (questions.length-1)){
-        alert("GAME IS DONE");
-        alert(TotalScore);
+        SendForm(TotalScore);
     }
     else{
         CurrentQuestion += 1;
