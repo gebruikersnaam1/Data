@@ -32,7 +32,7 @@ function ValidateAnswer(buttonValue){
     score = document.getElementById(buttonValue).value;
     console.log(score);
     TotalScore += score; //0 or 1
-    if(CurrentQuestion > questions.length){
+    if(CurrentQuestion >= (questions.length-1)){
         alert("GAME IS DONE");
     }
     else{
