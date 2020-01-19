@@ -1,10 +1,23 @@
 var questions = [];
 var CurrentQuestion = 0;
 var TotalScore = 0;
+var startTime;
+var endTime;
 
 function LoadQuestions(question){
     console.log(question);
     questions.push(question);
+}
+
+function GetTimeScore() {
+    endTime = new Date();
+    var timeDiff = endTime - startTime; //in ms
+    // strip the ms
+    timeDiff /= 1000;
+  
+    // get seconds 
+    var seconds = Math.round(timeDiff);
+    return (seconds+2); //timing goes slow, hence add 2 seconds
 }
 
 
@@ -14,6 +27,8 @@ function SetTitle(){
 }
 
 function SetNewQuestion(questionID){
+    startTime = new Date();
+
     document.getElementById('question').value = questions[questionID]['question'];
 
     document.getElementById('answer1').value = questions[questionID]['possibleAnswers'][0]['correct'];
@@ -28,12 +43,22 @@ function SetNewQuestion(questionID){
     document.getElementById('currentNumber').textContent = (CurrentQuestion+1);
 }
 
+function CalculateScore(score,time){
+    if (score == 0){
+        return 0;
+    }
+    else{
+        baseScore = 1000;
+        return (Math.round((baseScore/time)));
+    }
+}
+
 function ValidateAnswer(buttonValue){
     score = document.getElementById(buttonValue).value;
-    console.log(score);
-    TotalScore += score; //0 or 1
+    TotalScore += CalculateScore(score,GetTimeScore()); //0 or 1
     if(CurrentQuestion >= (questions.length-1)){
         alert("GAME IS DONE");
+        alert(TotalScore);
     }
     else{
         CurrentQuestion += 1;
