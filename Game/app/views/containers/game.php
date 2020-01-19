@@ -16,6 +16,7 @@ foreach($this->questions as $q){  ?>
 <?php } ?>
 <script>
 CountQuestions();
+SetNewQuestion(0);
 </script>
 <?php
 include_once($this->compomentPath."default/footer.php");

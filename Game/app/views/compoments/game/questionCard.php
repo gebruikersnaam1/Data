@@ -4,8 +4,8 @@
         </div>
         <div class="row">
         <textarea id="question" readonly></textarea>
-        <button onclick="alert('test')">1</button>
-        <button onclick="alert('test')">1</button>
-        <button onclick="alert('test')">1</button>
+        <button id="answer1" onclick="ValidateAnswer('answer1')"><span id="field1">test</span></button>
+        <button id="answer2" onclick="ValidateAnswer('answer2')"><span id="field2"></span></button>
+        <button id="answer3" onclick="ValidateAnswer('answer3')"><span id="field3"></span></button>
     </div>
 </div>
