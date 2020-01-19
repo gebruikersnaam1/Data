@@ -76,7 +76,6 @@ function SendForm(newScore) {
 
 function ValidateAnswer(buttonName){
     outcome = document.getElementById(buttonName).value;
-    alert(outcome);
     if(outcome != 0){
         TotalScore += CalculateScore(outcome,GetTimeScore()); //0 or 1
     }
