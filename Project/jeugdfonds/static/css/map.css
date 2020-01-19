@@ -1,0 +1,37 @@
+.Map .MapInner {
+  margin-top: 30px;
+}
+
+.Map .MapInner form input.btn-info {
+  background-color: #1453ec;
+  border-color: #1453ec;
+}
+
+.MapsWrapper {
+  display: flex;
+  width: 600px;
+  flex-flow: wrap;
+  margin: auto;
+  margin-top: 50px;
+  justify-content: center;
+}
+
+.Rozenburgstyle,
+.Hoogvlietstyle,
+.Pernisstyle,
+.HoekvanHollandstyle {
+  background-color: lavender;
+}
+
+table th {
+  text-align: center;
+}
+
+.MapOfRotterdam {
+  padding: 30px 0;
+}
+
+.MapOfRotterdam .MapImage {
+  display: flex;
+  justify-content: center;
+}

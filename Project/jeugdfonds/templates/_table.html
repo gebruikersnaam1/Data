@@ -1,0 +1,35 @@
+<div class="Map">
+  <div class="container">
+    <div class="MapInner">
+      <p>
+        The areas above are put in a table with their respected values (number
+        of children, Amount of intermediaries, ratio).
+      </p>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Area</th>
+            <th>Number of children</th>
+            <th>Intermediaries</th>
+            <th>Ratio</th>
+          </tr>
+        </thead>
+        {% for d in controller.GetMapItems() %}
+        <tr>
+          <td>{{ d.deelgemeente.areaName}}</td>
+          <td>{{d.deelgemeente.applicants}}</td>
+          <td>{{d.deelgemeente.intermediary}}</td>
+          {% if d.deelgemeente.intermediary > 0 %}
+          <td>
+            {{ '%0.2f'| format(d.deelgemeente.applicants /
+            d.deelgemeente.intermediary)}}
+          </td>
+          {% else %}
+          <td>NaN</td>
+          {% endif %}
+        </tr>
+        {% endfor %}
+      </table>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,51 @@
+<div class="Map">
+  <div class="container">
+    <div class="MapInner">
+      <h1>Map of Rotterdam</h1>
+      <p>
+      </p>
+      <form method="POST" action="/">
+        <lable>Min Age</lable>
+        <select name="minAge">
+          {% for x in range(controller.MinAge,(controller.MaxAge+1)) %}
+          <option value="{{x}}" {% if x == controller.SelectedValues['minAge'] %} selected {% endif %}>{{x}}</option>
+          {% endfor %}
+        </select>
+
+        <lable>Max Age</lable>
+        <select name="maxAge">
+          {% for x in range((controller.MaxAge),(controller.MinAge-1),-1) %}
+          <option value="{{x}}" {% if x == controller.SelectedValues['maxAge'] %} selected {% endif %}>{{x}}</option>
+          {% endfor %}
+        </select>
+
+        <lable>Gender</lable>
+        <select name="gender">
+          <option value="both">Both</option>
+          <option value="Man" {% if 'Man' == controller.SelectedValues['gender'] %} selected {% endif %}>Male</option>
+          <option value="Vrouw" {% if 'Vrouw' == controller.SelectedValues['gender'] %} selected {% endif %}>Female</option>
+        </select>
+
+        <lable>Status of applicant:</lable>
+        <select name="status">
+          <option value="False" {% if 'False' == controller.SelectedValues['status'] %} selected {% endif %}>Unhelped</option>
+          <option value="True" {% if 'True' == controller.SelectedValues['status'] %} selected {% endif %}>helped</option>
+        </select>
+
+        <input type="submit" value="Submit" class="btn btn-info" />
+      </form>
+
+      <div class="MapsWrapper">
+        {% for d in controller.GetMapItems() %}
+        <div class="{{d.className}}">
+          <img
+            src="{{ d.GetImage()}}"
+            alt="{{ d.deelgemeente.areaName}}"
+            title="{{ d.deelgemeente.areaName}} - {{d.deelgemeente.applicants}}"
+          />
+        </div>
+        {% endfor %}
+       </div>
+    </div>
+  </div>
+</div>
