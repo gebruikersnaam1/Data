@@ -12,7 +12,7 @@ class HighscoreController extends Controller{
         if(is_array($dataset) and count($dataset) > 0){
             include(compomentPath."highscore/table.php");
         }else{
-            print("<p>Table is currently empty, hence is not being displayed</p>");
+            print("<p>Table is currently empty, hence is not being displayed.</p>");
         }
     }
 
