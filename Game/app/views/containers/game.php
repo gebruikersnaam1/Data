@@ -15,7 +15,7 @@ foreach($this->questions as $q){  ?>
 </script>
 <?php } ?>
 <script>
-CountQuestions();
+SetTitle();
 SetNewQuestion(0);
 </script>
 <?php

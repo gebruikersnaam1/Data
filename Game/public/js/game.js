@@ -7,9 +7,10 @@ function LoadQuestions(question){
     questions.push(question);
 }
 
-// test function
-function CountQuestions(){
+
+function SetTitle(){
     console.log(questions.length);
+    document.getElementById('totalNumbers').textContent = questions.length;
 }
 
 function SetNewQuestion(questionID){
@@ -24,6 +25,7 @@ function SetNewQuestion(questionID){
     document.getElementById('answer3').value = questions[questionID]['possibleAnswers'][2]['correct'];
     document.getElementById('field3').textContent = questions[questionID]['possibleAnswers'][2]['content'];
 
+    document.getElementById('currentNumber').textContent = (CurrentQuestion+1);
 }
 
 function ValidateAnswer(buttonValue){
