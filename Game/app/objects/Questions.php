@@ -1,10 +1,10 @@
 <?php
 
 class Questions{
-    private $id;
-    private $question;
-    private $extraInfo;      
-    private $possibleAnswers;
+    public $id;
+    public $question;
+    public $extraInfo;      
+    public $possibleAnswers;
 
     public function __construct($id,$question,$extraInfo,$possibleAnswers){
         $this->id = $id;

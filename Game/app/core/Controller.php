@@ -18,6 +18,10 @@ abstract class Controller{
         }
     }
 
+    protected function Run500ErrorCode(){
+        header("Location: /500");
+        exit();
+    }
     protected function ValidateNoAuthentication(){
         if(isset($_SESSION['username'])){
             header("Location: /home");

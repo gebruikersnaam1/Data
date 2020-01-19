@@ -9,6 +9,14 @@ include_once($this->compomentPath."/default/header.php");
     </div>
 </div>
 <?php 
+foreach($this->questions as $q){  ?>
+<script>
+    LoadQuestions(<?php print(json_encode($q)) ?>);
+</script>
+<?php } ?>
+<script>
+CountQuestions();
+</script>
+<?php
 include_once($this->compomentPath."default/footer.php");
-
 ?>
