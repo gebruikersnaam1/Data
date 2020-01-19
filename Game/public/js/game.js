@@ -48,8 +48,8 @@ function CalculateScore(outcome,time){
         return 0;
     }
     else{
-        baseScore = 1000;
-        return (Math.round((baseScore/time)));
+        baseScore = 1800;
+        return (250 + (Math.round((baseScore/time))));
     }
 }
 
