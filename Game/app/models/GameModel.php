@@ -2,7 +2,7 @@
 
 class GameModel extends Model{
 
-    public function GetPersonHighScore($amount){
+    public function GetQuestions($amount){
         $a = $this->myconn->real_escape_string($amount);
         
         $query = "SELECT ID,question,extraInfo FROM questions LIMIT ?";

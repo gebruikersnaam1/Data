@@ -1,4 +1,4 @@
-<h1>New Record</h1>
+<h1>Quiz Completed</h1>
 
 <div class="row">
     <div class="col-sm">

@@ -48,8 +48,8 @@ function CalculateScore(outcome,time){
         return 0;
     }
     else{
-        baseScore = 1800;
-        return (250 + (Math.round((baseScore/time))));
+        baseScore = 2000;
+        return (350 + (Math.round((baseScore/time))));
     }
 }
 
@@ -57,7 +57,7 @@ function ShowCorrectAnswer(outcome,CurrentQuestion){
     if(outcome == 1){
         alert("Who answered correctly? You did! ");
     }else{
-        alert("You answered wrong! The data just got worse");
+        alert("You answered wrong! The data just got worse.");
     }
 }
 

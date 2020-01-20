@@ -15,7 +15,7 @@ class GameController extends Controller{
 
     public function Run(){
         $this->model = new GameModel();
-        $this->questions = $this->model->GetPersonHighScore($this->maxQuestionsAmount);
+        $this->questions = $this->model->GetQuestions($this->maxQuestionsAmount);
         if(count($this->questions) < 5)
             $this->Run500ErrorCode();
         shuffle($this->questions);
