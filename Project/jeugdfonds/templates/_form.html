@@ -13,23 +13,23 @@
     
     <form action="" method="POST">
       First name:<br />
-      <input type="text" name="firstname" value="{{controller.Applicant.FirstName}}" autofocus="on"/>
+      <input class="form-control" type="text" name="firstname" value="{{controller.Applicant.FirstName}}" autofocus="on"/>
       <br /><br />
       Family Name Affix:<br />
-      <input type="text" name="affix" value="{{controller.Applicant.Affix}}" />
+      <input class="form-control" type="text" name="affix" value="{{controller.Applicant.Affix}}" />
       <br /><br />
       Last name:<br />
-      <input type="text" name="lastname" value="{{controller.Applicant.LastName}}" />
+      <input class="form-control" type="text" name="lastname" value="{{controller.Applicant.LastName}}" />
       <br /><br />
       Gender:<br />
-      <select name="gender">
+      <select name="gender" class="form-control">
         <option value="%%">Make a choice</option>
         <option value="Vrouw" {% if 'Vrouw' == controller.Applicant.Gender %} selected {% endif %}>Female</option>
         <option value="Man" {% if 'Man' == controller.Applicant.Gender %} selected {% endif %}>Man</option>
       </select>
       <br /><br />
       ZIP code (numbers only):<br />
-      <input type="text" name="zipcode" value="{{controller.Applicant.ZipCode}}" />
+      <input class="form-control" type="text" name="zipcode" value="{{controller.Applicant.ZipCode}}" />
       <br /><br />
       Date of Birth:<br />
       <input
