@@ -1,0 +1,11 @@
+.WebsiteMenu {
+  background-color: #1453ec;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.menuLogo {
+  height: 100%;
+  width: auto;
+  max-height: 55px;
+}
