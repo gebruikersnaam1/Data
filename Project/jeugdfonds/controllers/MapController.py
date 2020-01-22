@@ -10,12 +10,13 @@ class MapController:
     MinAge = 4
     MaxAge = 18
     SelectedValues = {"minAge" : MinAge, "maxAge" : MaxAge, "gender": "%%", "status": "False"}
+    totalPeople = {"intermediaries": 0,"applicants": 0}
 
     def __init__(self, gemeentes):
         self.listGemeentes = gemeentes
         self.SetSelectedValues()
         self.MapItems = self.CreateMapItems()
-    
+        
     def SetSelectedValues(self): 
         try:
             self.SelectedValues['minAge'] = int(request.form['minAge'])

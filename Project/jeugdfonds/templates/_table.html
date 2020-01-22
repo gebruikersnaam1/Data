@@ -24,11 +24,19 @@
             {{ '%0.2f'| format(d.deelgemeente.applicants /
             d.deelgemeente.intermediary)}}
           </td>
+          {{ controller.AddStatsOfTotal(d.deelgemeente.applicants,d.deelgemeente.intermediary) }}
           {% else %}
           <td>NaN</td>
           {% endif %}
         </tr>
         {% endfor %}
+
+        <tr>
+          <td></td>
+          <td></td>
+          <td>Total</td>
+          <td>500</td>
+        </tr>
       </table>
     </div>
   </div>

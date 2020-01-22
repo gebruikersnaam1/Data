@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 19 jan 2020 om 12:19
+-- Gegenereerd op: 22 jan 2020 om 13:49
 -- Serverversie: 10.4.11-MariaDB
 -- PHP-versie: 7.4.1
 
@@ -91,7 +91,19 @@ INSERT INTO `possibleanswers` (`id`, `questionID`, `content`, `correct`) VALUES
 (21, 7, 'Complete, Consistent and Accurate', 1),
 (22, 8, 'Your data will start to be clean when the data information be accurate because there are no duplicates', 1),
 (23, 8, 'Make data as consistent as possible in terms of labels, categories, time stamps and other types of structures', 1),
-(24, 8, 'When data is without risks and problems including the loss of important information or valid data', 1);
+(24, 8, 'When data is without risks and problems including the loss of important information or valid data', 1),
+(25, 9, 'A dropdown with fixed options could be used', 1),
+(26, 9, 'The user can write down the disease themselves', 0),
+(27, 9, 'A dropdown with also an option to write down the disease themselves', 0),
+(28, 10, 'No, when data complies to an ISO standard it does not automatically mean that it also complies to another ISO standard about data quality', 0),
+(29, 10, 'Yes, because ISO 8000 is met when the data is made portable and this is also one of the characteristics in the data quality model of ISO 25012', 1),
+(30, 10, 'Yes, when data meets all of ISO 25012 the quality of the data is at its best and the quality cannot be made better.', 0),
+(31, 11, 'True. Different companies can use different software.', 0),
+(32, 11, 'False. Your data should not be locked into the software. The software needs to be ISO 8000 compliant.', 1),
+(33, 11, 'False. If the data is made in a portable way (e.g. JSON, XML etc.) that is enough. You can use whichever software you like.', 0),
+(34, 12, 'Yes, the most important characteristics are met.', 0),
+(35, 12, 'No, not all data characteristics are met.', 1),
+(36, 12, 'It depends on the situation. In the case of Jeugdfonds, because of GDPR laws the data complies to ISO 25012 when having these characteristics.', 0);
 
 -- --------------------------------------------------------
 
@@ -118,7 +130,11 @@ INSERT INTO `questions` (`ID`, `question`, `difficult`, `extraInfo`) VALUES
 (5, 'Why is it important to document the design decisions of the database?', 1, ''),
 (6, 'Why is it important to check the insertion of data?', 1, ''),
 (7, 'What are some of the characteristics of good data quality according to ISO 25012?', 1, ''),
-(8, 'When are you in the right direction of getting your data clean?', 1, '');
+(8, 'When are you in the right direction of getting your data clean?', 1, ''),
+(9, 'If additional information about an applicant is needed (e.g. a disease/mental issue) what would be the optimal way of asking that question?', 1, ''),
+(10, 'Does data also comply to ISO 8000 when all characteristics of the data quality model of ISO 25012 is met?', 1, ''),
+(11, 'The software used to make data ISO 8000 compliant is not of importance.', 1, ''),
+(12, 'Does data comply to ISO 25012 when it is accurate, complete, consistent, portable and credible?', 1, '');
 
 -- --------------------------------------------------------
 
@@ -187,13 +203,13 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT voor een tabel `possibleanswers`
 --
 ALTER TABLE `possibleanswers`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT voor een tabel `questions`
 --
 ALTER TABLE `questions`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

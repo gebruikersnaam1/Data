@@ -33,3 +33,4 @@ class ChartController:
     def GetApplicantsCountJSON(self):
         lst = self.GetApplicantsList(self.GetBreakPoint())
         return self.ConvertListToJSON(lst)
+    
