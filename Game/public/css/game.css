@@ -1,33 +1,34 @@
-.gameContainer{
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    display: block;
-    background-color: #1051EC;
-    overflow: hidden;
+.gameContainer {
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  display: block;
+  background-color: #1453ec;
+  overflow: hidden;
 }
 
-.gameTitleContainer{
-    margin-top: 50px;
-    padding: 10px;
-    min-height: 500px;
-    height: auto;
-    background-color: white;
-    overflow: hidden;
+.gameTitleContainer {
+  margin-top: 50px;
+  padding: 10px;
+  min-height: 500px;
+  height: auto;
+  background-color: white;
+  overflow: hidden;
 }
 
-.gameTitleContainer textarea{
-    width: 100%;
-    height: auto;
-    overflow: hidden;
-    resize: none;
+.gameTitleContainer textarea {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  padding: 15px;
+  resize: none;
 }
 
-.gameTitleContainer button{
-    display: block;
-    min-height: 75px;
-    margin: 10px auto 10px auto;
-    min-width: 100%;
-    width: auto;
-    max-width: 900px;
+.gameTitleContainer button {
+  display: block;
+  min-height: 75px;
+  margin: 10px auto 10px auto;
+  min-width: 100%;
+  width: auto;
+  max-width: 900px;
 }

@@ -18,6 +18,10 @@
   <link rel="stylesheet" href="<?php print(cssPath); ?>custom.css">
   <link rel="stylesheet" href="<?php print(cssPath); ?>game.css">
 
+  <!-- CSS Components -->
+  <link rel="stylesheet" href="<?php print(cssPath); ?>menu.css">
+  <link rel="stylesheet" href="<?php print(cssPath); ?>landing.css">
+
 
   <!-- JS -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -36,7 +40,7 @@
   <link rel="apple-touch-icon" sizes="144x144" href="<?php print(imgPath); ?>favicon/apple-icon-144x144.png">
   <link rel="apple-touch-icon" sizes="152x152" href="<?php print(imgPath); ?>favicon/apple-icon-152x152.png">
   <link rel="apple-touch-icon" sizes="180x180" href="<?php print(imgPath); ?>favicon/apple-icon-180x180.png">
-  <link rel="icon" type="image/png" sizes="192x192"  href="<?php print(imgPath); ?>favicon/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="<?php print(imgPath); ?>favicon/android-icon-192x192.png">
   <link rel="icon" type="image/png" sizes="32x32" href="<?php print(imgPath); ?>favicon/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="96x96" href="<?php print(imgPath); ?>favicon/favicon-96x96.png">
   <link rel="icon" type="image/png" sizes="16x16" href="<?php print(imgPath); ?>favicon/favicon-16x16.png">
@@ -52,4 +56,3 @@
   <![endif]-->
 
   <!-- Add your site or application content here -->
- 
