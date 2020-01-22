@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 22 jan 2020 om 13:49
+-- Gegenereerd op: 22 jan 2020 om 15:58
 -- Serverversie: 10.4.11-MariaDB
--- PHP-versie: 7.4.1
+-- PHP-versie: 7.2.26
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -40,6 +40,7 @@ CREATE TABLE `highscore` (
 
 INSERT INTO `highscore` (`username`, `insert_date`, `score`) VALUES
 ('abv', '2020-01-19 11:15:50', 4000),
+('annaanna', '2020-01-22 13:19:24', 7434),
 ('deford', '2020-01-19 11:16:54', 5600),
 ('gebruikersnaam', '2020-01-19 11:15:25', 1000),
 ('gmaas', '2020-01-19 11:16:42', 6000),
@@ -103,7 +104,10 @@ INSERT INTO `possibleanswers` (`id`, `questionID`, `content`, `correct`) VALUES
 (33, 11, 'False. If the data is made in a portable way (e.g. JSON, XML etc.) that is enough. You can use whichever software you like.', 0),
 (34, 12, 'Yes, the most important characteristics are met.', 0),
 (35, 12, 'No, not all data characteristics are met.', 1),
-(36, 12, 'It depends on the situation. In the case of Jeugdfonds, because of GDPR laws the data complies to ISO 25012 when having these characteristics.', 0);
+(36, 12, 'It depends on the situation. In the case of Jeugdfonds, because of GDPR laws the data complies to ISO 25012 when having these characteristics.', 0),
+(37, 13, 'You can send New Year messages to people who are already dead', 1),
+(38, 13, 'All of the data becomes invalid', 0),
+(39, 13, 'Data starts to become corrupt by time', 0);
 
 -- --------------------------------------------------------
 
@@ -134,7 +138,8 @@ INSERT INTO `questions` (`ID`, `question`, `difficult`, `extraInfo`) VALUES
 (9, 'If additional information about an applicant is needed (e.g. a disease/mental issue) what would be the optimal way of asking that question?', 1, ''),
 (10, 'Does data also comply to ISO 8000 when all characteristics of the data quality model of ISO 25012 is met?', 1, ''),
 (11, 'The software used to make data ISO 8000 compliant is not of importance.', 1, ''),
-(12, 'Does data comply to ISO 25012 when it is accurate, complete, consistent, portable and credible?', 1, '');
+(12, 'Does data comply to ISO 25012 when it is accurate, complete, consistent, portable and credible?', 1, ''),
+(13, 'What could go wrong if data is not up-to-date?', 1, '');
 
 -- --------------------------------------------------------
 
@@ -156,6 +161,7 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`username`, `password`, `firstname`, `affix`, `lastname`) VALUES
 ('abv', '$2y$10$MR57k7QBWnWhDKQNICzkp.oewvAJFV6/AkQgfh3tvvG5sWc/HnBpe', 'Abdulvahid', '', 'Kilic'),
+('annaanna', '$2y$10$dTdj6PjiEWQnVjyBfbVaC.P6KFV7jMPaFjsXIOcJVIKi9iZbiSu7e', 'Anna', '', 'Perez'),
 ('deford', '$2y$10$kcQKGQUdY16pUCe4RCkbX.37v71gdq6kjhEVi3MIqOJi4BMQ8SXRy', 'Devon', '', 'Crawford'),
 ('dujaa', '$2y$10$xlaEEiJwT2DnNtXI40/5puoGNp77iUA./Oanyetszzr8aQvBdlW3a', 'anouk', '', 'Dujardin'),
 ('gebruikersnaam', '$2y$10$.A1iY9MyszgXcVvY5M7do.X8k63LtuljSmxlBdGOrsJyjCmK1l/Gm', 'Chris', '', 'Achternaam'),
@@ -203,13 +209,13 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT voor een tabel `possibleanswers`
 --
 ALTER TABLE `possibleanswers`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 
 --
 -- AUTO_INCREMENT voor een tabel `questions`
 --
 ALTER TABLE `questions`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
