@@ -19,24 +19,22 @@
           <td>{{ d.deelgemeente.areaName}}</td>
           <td>{{d.deelgemeente.applicants}}</td>
           <td>{{d.deelgemeente.intermediary}}</td>
-          {% if d.deelgemeente.intermediary > 0 %}
           <td>
-            {{ '%0.2f'| format(d.deelgemeente.applicants /
+            {{ controller.CalculatorAverage(d.deelgemeente.applicants,
             d.deelgemeente.intermediary)}}
           </td>
-          {{ controller.AddStatsOfTotal(d.deelgemeente.applicants,d.deelgemeente.intermediary) }}
-          {% else %}
-          <td>NaN</td>
-          {% endif %}
         </tr>
+        {{ controller.AddStatsOfTotal(d.deelgemeente.applicants,d.deelgemeente.intermediary) }}
         {% endfor %}
 
         <tr>
           <td></td>
           <td></td>
           <td>Total</td>
-          <td>{{ '%0.2f'| format(controller.totalPeople["applicants"] /
-            controller.totalPeople["intermediaries"])}}</td>
+          <td>
+            {{controller.CalculatorAverage(controller.totalPeople["applicants"],
+              controller.totalPeople["intermediaries"])}}
+          </td>
         </tr>
       </table>
     </div>

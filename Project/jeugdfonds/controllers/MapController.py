@@ -33,7 +33,16 @@ class MapController:
     def AddStatsOfTotal(self,applicant,intermediaries):
         self.totalPeople["intermediaries"] += intermediaries
         self.totalPeople["applicants"] += applicant
-        
+
+    #calculator avg
+    def CalculatorAverage(self, x,y):
+        try:
+            outcome = round((x/y),2)
+            return outcome
+        except:
+            return "NaN"
+
+
     def CreateMapItems(self):
         mapItems = []
         areasFound = []
