@@ -10,3 +10,10 @@
 .Map table thead tr th {
   color: #ffffff;
 }
+
+.Map .GDPR a {
+  text-decoration: underline;
+  color: #000;
+  padding: 15px 0;
+  font-size: 12px;
+}
