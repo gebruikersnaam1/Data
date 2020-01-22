@@ -29,7 +29,11 @@ class MapController:
             self.SelectedValues['gender'] = "%%"
             self.SelectedValues['status'] = "False"
 
-            
+    #last minut feedback function
+    def AddStatsOfTotal(self,applicant,intermediaries):
+        self.totalPeople["intermediaries"] += intermediaries
+        self.totalPeople["applicants"] += applicant
+        
     def CreateMapItems(self):
         mapItems = []
         areasFound = []

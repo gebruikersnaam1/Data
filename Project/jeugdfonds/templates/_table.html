@@ -35,7 +35,8 @@
           <td></td>
           <td></td>
           <td>Total</td>
-          <td>500</td>
+          <td>{{ '%0.2f'| format(controller.totalPeople["applicants"] /
+            controller.totalPeople["intermediaries"])}}</td>
         </tr>
       </table>
     </div>
