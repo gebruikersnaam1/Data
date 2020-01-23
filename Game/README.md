@@ -1,4 +1,5 @@
 # Jeugdfonds Game
+The game developed for the Jeugdfonds Project of the minor Data Engineering.
 
 ## How to run
 
