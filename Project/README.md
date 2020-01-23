@@ -6,4 +6,4 @@ The application developed for the Jeugdfonds Project of the minor Data Engineeri
 - Navigate to the **Project** folder and execute **pipenv install**
 - Execute the command: **pipenv shell**
 - Execute the command: **python app.py**
-- In your browser navigate to: **http:127.0.0.1:5000/**
+- In your browser navigate to: **http://127.0.0.1:5000/**
